@@ -12,7 +12,7 @@ import survivalGame.inputs.GameKeyListener;
 import survivalGame.inputs.InputListener;
 import survivalGame.userInterface.Button.ButtonBuilder;
 
-public class PauseMenu implements GameKeyListener, UIRenderable{
+public final class PauseMenu implements GameKeyListener, UIRenderable{
 
 	Button[] buttons = new Button[2];
 	final BufferedImage buttonTexture;

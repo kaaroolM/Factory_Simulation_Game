@@ -9,8 +9,9 @@ import graphics.TextureManager;
 import graphics.WorldRenderable;
 import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileObjectID;
+import survivalGame.tileObjects.FactoryComponents.FactoryComponent;
 
-public abstract class TileObject implements WorldRenderable{
+public sealed abstract class TileObject implements WorldRenderable permits FactoryComponent, TileRock, TileTree {
 	
 	protected BufferedImage texture; 
 	protected Tile parentTile;

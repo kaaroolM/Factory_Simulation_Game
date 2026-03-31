@@ -6,7 +6,7 @@ import java.util.Map;
 
 import graphics.GameGraphics;
 
-public class UIAlignment {
+public final class UIAlignment {
 
 	final private static int WIDTH = GameGraphics.SCREEN_WIDTH;
 	final private static int HEIGHT = GameGraphics.SCREEN_HEIGHT;

@@ -13,7 +13,7 @@ import graphics.WorldRenderable;
  * 
  * List size is usually chunkSize * chunkSize
  */
-public class TileChunk implements WorldRenderable{
+public final class TileChunk implements WorldRenderable{
 
 	List<Tile> tiles = new ArrayList<>();
 

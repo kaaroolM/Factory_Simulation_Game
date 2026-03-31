@@ -18,7 +18,7 @@ import survivalGame.TileManagement.TileObjectID;
 import survivalGame.tileObjects.Direction;
 import survivalGame.tileObjects.TileRock;
 
-public class RockDriller extends FactoryComponent implements ITickable {
+public final class RockDriller extends FactoryComponent implements ITickable {
 	
 	public static final TileObjectID ID = TileObjectID.ROCK_DRILLER;
 	
@@ -36,18 +36,14 @@ public class RockDriller extends FactoryComponent implements ITickable {
 		TickManager.getInstance().register(this);
 		TextureManager textureManager = GameGraphics.getTextureManager();
 		switch (rotation) {
-		case NORTH:
+		case NORTH ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("RockDriller"), 90));
-			break;
-		case EAST:
+		case EAST ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("RockDriller"), 180));
-			break;
-		case SOUTH:
+		case SOUTH ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("RockDriller"), -90));
-			break;
-		case WEST:
+		case WEST ->
 			super.setTexture("RockDriller", textureManager);
-			break;
 		}
 		
 		Direction opposite = rotation.rotatedClockwise().rotatedClockwise();

@@ -17,7 +17,7 @@ import survivalGame.tileObjects.FactoryComponents.TreeHarvester;
 /**
  * A factory that maps itemID to placeable object that can be instantiated
  */
-public class PlaceablesFactory {
+public final class PlaceablesFactory {
 	
 	static Map<ItemID, Function<PlacementInfo, TileObject>> placementMap;
 	

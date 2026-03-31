@@ -9,7 +9,7 @@ import survivalGame.tileObjects.TileObject;
 import survivalGame.tileObjects.TileRock;
 import survivalGame.tileObjects.TileTree;
 
-public class WorldGenerator {
+public final class WorldGenerator {
 	
 	private static int tiles = 0;
 	

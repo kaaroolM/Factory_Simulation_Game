@@ -6,15 +6,14 @@ import java.util.List;
 public final class TickManager implements Updatable{
 	
 	private static List<ITickable> toTick = new ArrayList<>();
-	private static TickManager TickManagerInstance;
+	private static final TickManager TickManagerInstance;
+	static {
+		TickManagerInstance = new TickManager();
+		Updater.getInstance().register(TickManagerInstance);
+	}
 	private int tick = 0;
 	private static final int tickrate = 300;
 	public static TickManager getInstance() {
-		if (TickManagerInstance == null) {
-            Updater.getInstance();
-			TickManagerInstance = new TickManager();
-			Updater.register(TickManagerInstance);
-	    }
         return TickManagerInstance;
     }
 	

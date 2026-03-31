@@ -14,7 +14,7 @@ import survivalGame.GameState;
 import survivalGame.inputs.InputListener;
 import survivalGame.inputs.MouseClickListener;
 
-public class Button implements MouseClickListener{
+public final class Button implements MouseClickListener{
 	
 	//Make x and y "virtual" and make it scale with resolution
 	

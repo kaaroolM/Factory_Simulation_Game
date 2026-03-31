@@ -4,7 +4,7 @@ import java.util.List;
 
 import survivalGame.TileManagement.Tile;
 
-public class Node {
+public final class Node {
 	
 	final public Tile tile;
 	// f = g + h

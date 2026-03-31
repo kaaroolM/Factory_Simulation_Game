@@ -13,7 +13,7 @@ import graphics.TextureManager;
 import survivalGame.GameState;
 import survivalGame.userInterface.Button.ButtonBuilder;
 
-public class SettingsDisplay {
+public final class SettingsDisplay {
 	List<Button> buttons = new ArrayList<>();
 	
 	BufferedImage buttonTexture;

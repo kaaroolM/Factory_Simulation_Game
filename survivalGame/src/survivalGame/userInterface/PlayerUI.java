@@ -20,7 +20,7 @@ import survivalGame.ItemManagement.ItemStack;
 import survivalGame.inputs.GameKeyListener;
 import survivalGame.inputs.InputListener;
 
-public class PlayerUI implements UIRenderable, GameKeyListener, InventoryListener{
+public final class PlayerUI implements UIRenderable, GameKeyListener, InventoryListener{
 
 	private boolean active = false;
 	

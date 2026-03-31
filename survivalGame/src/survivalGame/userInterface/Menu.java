@@ -12,7 +12,7 @@ import graphics.TextureManager;
 import survivalGame.GameState;
 import survivalGame.userInterface.Button.ButtonBuilder;
 
-public class Menu {
+public final class Menu {
 	List<Button> buttons = new ArrayList<>();
 	
 	BufferedImage buttonTexture;

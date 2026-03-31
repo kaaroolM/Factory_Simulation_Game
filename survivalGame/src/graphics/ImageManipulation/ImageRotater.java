@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
-public class ImageRotater {
+public final class ImageRotater {
 
 	/**
 	 * rotates Clockwise 

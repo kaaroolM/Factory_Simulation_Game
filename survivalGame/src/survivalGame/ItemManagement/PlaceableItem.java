@@ -6,7 +6,7 @@ import survivalGame.tileObjects.Direction;
 import survivalGame.tileObjects.PlacementInfo;
 import survivalGame.tileObjects.TileObject;
 
-public class PlaceableItem extends Item {
+public final class PlaceableItem extends Item {
 
 	public PlaceableItem(ItemID id) {
 		super(id);

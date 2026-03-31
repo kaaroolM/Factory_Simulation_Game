@@ -8,7 +8,7 @@ import survivalGame.TileManagement.TileChunk;
  * Size of the chunks, worldSize, and amount of chunks.
  * Amount of chunks is calculated by worldSize / chunkSize. 
  */
-public class WorldInfo {
+public final class WorldInfo {
 
 	public final TileChunk[] chunks; 
 	public final int worldSize; 

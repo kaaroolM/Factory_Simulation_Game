@@ -10,7 +10,7 @@ import survivalGame.InventoryListener;
 import survivalGame.ItemManagement.CraftingRecipe;
 import survivalGame.inputs.InputListener;
 
-public class CraftButton implements UIClickable, InventoryListener{
+public final class CraftButton implements UIClickable, InventoryListener{
 
 	private int pixelX;
 	private int pixelY;

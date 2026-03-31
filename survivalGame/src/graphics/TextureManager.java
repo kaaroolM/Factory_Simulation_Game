@@ -9,7 +9,7 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-public class TextureManager {
+public final class TextureManager {
 
 	private Map<String, BufferedImage> textures;
 	

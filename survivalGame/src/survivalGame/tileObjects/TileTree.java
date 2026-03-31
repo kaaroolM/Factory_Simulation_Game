@@ -5,7 +5,7 @@ import graphics.GameGraphics;
 import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileObjectID;
 
-public class TileTree extends TileObject{
+public final class TileTree extends TileObject{
 	
 	public static final TileObjectID ID = TileObjectID.TREE;
 	

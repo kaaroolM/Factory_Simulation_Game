@@ -11,7 +11,7 @@ import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileObjectID;
 import survivalGame.tileObjects.Direction;
 
-public class ConveyorSplitter extends Conveyor{
+public final class ConveyorSplitter extends Conveyor{
 	
 	public static final TileObjectID ID = TileObjectID.CONVEYOR_SPLITTER_L;
 	
@@ -35,18 +35,14 @@ public class ConveyorSplitter extends Conveyor{
 		String texture = rightSide ? "ConveyorSplitterR" : "ConveyorSplitterL";
 		
 		switch (rotation) {
-		case NORTH:
+		case NORTH ->
 			super.setTexture(textureManager.getTexture(texture));
-			break;
-		case EAST:
+		case EAST ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture(texture), 90));
-			break;
-		case SOUTH:
+		case SOUTH ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture(texture), 180));
-			break;
-		case WEST:
+		case WEST ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture(texture), -90));
-			break;
 		}
 		
 		EnumSet<Direction> blacklist = EnumSet.of(rotation.rotatedAntiClockwise(), rotation.rotatedClockwise());

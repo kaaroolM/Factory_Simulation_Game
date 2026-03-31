@@ -8,7 +8,7 @@ import graphics.UIRenderable;
 import survivalGame.ItemManagement.Item;
 import survivalGame.ItemManagement.ItemStack;
 
-public class HotbarSlot implements UIRenderable{
+public final class HotbarSlot implements UIRenderable{
 	//private BufferedImage UI;
 	private BufferedImage selectedUI;
 	final int pixelX;

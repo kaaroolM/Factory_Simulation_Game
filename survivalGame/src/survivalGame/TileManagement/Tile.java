@@ -11,7 +11,7 @@ import graphics.WorldRenderable;
 import survivalGame.tileObjects.TileObject;
 import survivalGame.tileObjects.FactoryComponents.FactoryComponent;
 
-public class Tile implements WorldRenderable{
+public final class Tile implements WorldRenderable{
 	
 	private TileType tileType = TileType.GRASS; //NOT FINAL FOR NOW
 	

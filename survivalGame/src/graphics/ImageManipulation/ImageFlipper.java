@@ -3,7 +3,7 @@ package graphics.ImageManipulation;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public class ImageFlipper {
+public final class ImageFlipper {
 
 
 	/**

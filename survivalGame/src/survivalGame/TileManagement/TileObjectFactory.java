@@ -14,7 +14,7 @@ import survivalGame.tileObjects.FactoryComponents.Planker;
 import survivalGame.tileObjects.FactoryComponents.RockDriller;
 import survivalGame.tileObjects.FactoryComponents.TreeHarvester;
 
-public class TileObjectFactory {
+public final class TileObjectFactory {
 	
 	//Map linking ID's to functions that can instantiate the appropiate class.
 	static private Map<TileObjectID, Function<PlacementInfo, TileObject>> IDtoInstance;
@@ -38,12 +38,10 @@ public class TileObjectFactory {
 	 * @return The instantiated {@link TileObject}
 	 */
 	public static TileObject createTileObject(TileObjectID tileObjectID, PlacementInfo info) {
-		if (!IDtoInstance.containsKey(tileObjectID)) {
-			 throw new IllegalArgumentException("ItemID: " + tileObjectID.toString() + " is invalid! ");
-		}
-		
 		Function<PlacementInfo, TileObject> function = IDtoInstance.get(tileObjectID);
-
+		if (function == null) {
+			throw new IllegalArgumentException("ItemID: " + tileObjectID.toString() + " is invalid! ");
+		}
 		return function.apply(info);
 		
 	}

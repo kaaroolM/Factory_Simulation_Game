@@ -2,7 +2,7 @@ package survivalGame.tileObjects;
 
 import survivalGame.TileManagement.Tile;
 
-public class PlacementInfo {
+public final class PlacementInfo {
 	//Wrapper class for PlaceableFactory
 	//Did this since the Tile placed is yet to be decided
 	//Only the class which is going to be instantiated is decided. 

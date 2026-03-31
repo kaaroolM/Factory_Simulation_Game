@@ -12,7 +12,7 @@ import survivalGame.ItemManagement.WorldItem;
 import survivalGame.TileManagement.Tile;
 import survivalGame.tileObjects.Direction;
 
-public class Planker extends Conveyor{
+public final class Planker extends Conveyor{
 	
 	private ActionTimer actionTimer;
 	public Planker(Tile parentTile, Direction rotation) {
@@ -21,18 +21,14 @@ public class Planker extends Conveyor{
 		TextureManager textureManager = GameGraphics.getTextureManager();
 		
 		switch (rotation) {
-		case NORTH:
+		case NORTH ->
 			super.setTexture(textureManager.getTexture("Planker"));
-			break;
-		case EAST:
+		case EAST ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("Planker"), 90));
-			break;
-		case SOUTH:
+		case SOUTH ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("Planker"), 180));
-			break;
-		case WEST:
+		case WEST ->
 			super.setTexture(ImageRotater.rotateImage(textureManager.getTexture("Planker"), -90));
-			break;
 		}
 		
 		inputBlacklist = EnumSet.of(rotation.rotatedAntiClockwise(), rotation.rotatedClockwise());

@@ -8,7 +8,7 @@ import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileProvider;
 import survivalGame.inputs.InputListener;
 
-public class BuildDisplayer implements WorldRenderable {
+public final class BuildDisplayer implements WorldRenderable {
 
 	private Tile lastClicked;
 	private BuildingController controller;

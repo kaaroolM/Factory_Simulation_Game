@@ -19,7 +19,7 @@ import survivalGame.tileObjects.Direction;
 import survivalGame.tileObjects.PlacementInfo;
 import survivalGame.tileObjects.TileObject;
 
-public class WorldIO {
+public final class WorldIO {
 
 	/**
 	 * Used for saving files to inform which version of the software the save file is from.

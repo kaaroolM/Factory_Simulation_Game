@@ -1,6 +1,6 @@
 package survivalGame.ItemManagement;
 
-public class ItemStack {
+public final class ItemStack {
 	private Item item;
 	private int quantity;
 	public final static int MAX_STACK = 50;

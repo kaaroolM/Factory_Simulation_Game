@@ -6,7 +6,7 @@ import graphics.GameGraphics;
 import survivalGame.tileObjects.Direction;
 import survivalGame.tileObjects.FactoryComponents.Conveyor;
 
-public class ConveyorSpriteManager {
+public final class ConveyorSpriteManager {
 	//integers used for input. North is 0001 for example 
 	public static final int NORTH = Direction.NORTH.getRotationMask();
 	public static final int EAST  = Direction.EAST.getRotationMask();

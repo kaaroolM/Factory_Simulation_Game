@@ -16,7 +16,7 @@ import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileObjectID;
 import survivalGame.tileObjects.Direction;
 
-public class Conveyor extends FactoryComponent implements IContainsConveyor, IItemReciever{
+public sealed class Conveyor extends FactoryComponent implements IContainsConveyor, IItemReciever permits ConveyorSplitter, Planker {
 	
 	public static final TileObjectID ID = TileObjectID.CONVEYOR;
 	

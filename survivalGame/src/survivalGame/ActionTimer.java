@@ -1,6 +1,6 @@
 package survivalGame;
 
-public class ActionTimer {
+public final class ActionTimer {
 
 	private int cooldown;
 	private int current;

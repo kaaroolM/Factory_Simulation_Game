@@ -1,6 +1,6 @@
 package survivalGame.ConveyorSystem;
 
-public class BeltSequence {
+public final class BeltSequence {
 	private int beltKey;
 	
 	public BeltSequence(int beltKey) {

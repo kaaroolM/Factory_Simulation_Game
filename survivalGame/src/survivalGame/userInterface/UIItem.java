@@ -9,7 +9,7 @@ import graphics.UIRenderable;
 import survivalGame.ItemManagement.Item;
 import survivalGame.ItemManagement.ItemStack;
 
-public class UIItem implements UIRenderable{
+public final class UIItem implements UIRenderable{
 
 	private int pixelX;
 	private int pixelY;

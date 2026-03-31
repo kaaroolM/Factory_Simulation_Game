@@ -20,7 +20,7 @@ import survivalGame.WorldIO;
 import survivalGame.WorldInfo;
 import survivalGame.userInterface.Button.ButtonBuilder;
 
-public class WorldSelectionMenu {
+public final class WorldSelectionMenu {
 	Button[] slotButtons = new Button[3];
 	
 	Button[] deleteButtons = new Button[3];

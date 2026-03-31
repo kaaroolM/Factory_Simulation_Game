@@ -8,7 +8,7 @@ import graphics.GameGraphics;
 import survivalGame.inputs.InputListener;
 
 
-public class MainScreen {
+public final class MainScreen {
 	
 	public MainScreen(GameGraphics gameGraphics) {
 	    JFrame frame = new JFrame("Factory Game");

@@ -17,7 +17,7 @@ public final class ConveyorManager implements ITickable{
 
 	private ConveyorNetworkSystem networkSystem = new ConveyorNetworkSystem();
 	
-	private static ConveyorManager ConveyorManagerInstance;
+	private static final ConveyorManager ConveyorManagerInstance = new ConveyorManager();
 	
 	/**
 	 * Maps beltKey to conveyor Leaf. 
@@ -27,15 +27,11 @@ public final class ConveyorManager implements ITickable{
 	//This will increment for each new conveyor leef you make.
 	
 	public static ConveyorManager getInstance() {
-		if (ConveyorManagerInstance == null) {
-            ConveyorManagerInstance = new ConveyorManager();
-	    }
         return ConveyorManagerInstance;
     }
 	
 	public ConveyorManager() {
-		TickManager.getInstance().register(this); 
-	
+		TickManager.getInstance().register(this);
 	}
 	 
 	

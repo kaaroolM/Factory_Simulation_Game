@@ -2,7 +2,7 @@ package survivalGame.ItemManagement;
 
 import java.util.Map;
 
-public class CraftingRecipe {
+public final class CraftingRecipe {
 	
 	private Map<ItemID, Integer> recipe;
 	private ItemID outputItem;

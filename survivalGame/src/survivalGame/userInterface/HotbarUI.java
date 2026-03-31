@@ -76,8 +76,8 @@ public final class HotbarUI implements UIRenderable, GameKeyListener{
 	public PlaceableItem getSelectedItem() {
 		if (player.getSelectedHotbarSlot() == null) return null;
 		Item item = player.getSelectedHotbarSlot().getItem();
-		if (!(item instanceof PlaceableItem)) return null;
-		return (PlaceableItem) item;
+		if (!(item instanceof PlaceableItem placeableItem)) return null;
+		return placeableItem;
 	}
 	
 	@Override

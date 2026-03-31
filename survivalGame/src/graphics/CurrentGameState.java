@@ -2,6 +2,6 @@ package graphics;
 
 import survivalGame.GameState;
 
-public class CurrentGameState {
+public final class CurrentGameState {
 	public static GameState gameState;
 }

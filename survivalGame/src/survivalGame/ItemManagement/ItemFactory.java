@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-public class ItemFactory {
+public final class ItemFactory {
 
 	static Map<ItemType, Function<ItemID, Item>> itemCreators;
 	

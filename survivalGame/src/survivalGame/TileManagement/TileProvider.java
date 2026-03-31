@@ -2,7 +2,7 @@ package survivalGame.TileManagement;
 
 import graphics.GameGraphics;
 
-public class TileProvider {
+public final class TileProvider {
 
 	/**
 	 * Accesses the Tile according to the pixel coordinates of the click.

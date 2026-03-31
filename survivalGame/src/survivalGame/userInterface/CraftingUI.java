@@ -13,7 +13,7 @@ import survivalGame.Recipes;
 import survivalGame.ItemManagement.Item;
 import survivalGame.ItemManagement.ItemID;
 
-public class CraftingUI implements UIRenderable, InventoryListener {
+public final class CraftingUI implements UIRenderable, InventoryListener {
 	
 	private Map<ItemID, Integer> inventory;
 	private PlayerUI playerUI;

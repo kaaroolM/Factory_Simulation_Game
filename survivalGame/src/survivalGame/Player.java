@@ -25,7 +25,7 @@ import survivalGame.userInterface.HotbarSlot;
 import survivalGame.userInterface.InventorySlot;
 import survivalGame.userInterface.PlayerUI;
 
-public class Player implements Updatable, WorldRenderable, GameKeyListener, MouseClickListener{
+public final class Player implements Updatable, WorldRenderable, GameKeyListener, MouseClickListener{
 	
 	private MovementController movement = new MovementController();
 	private BuildingController buildingTool = new BuildingController(this);
@@ -49,7 +49,7 @@ public class Player implements Updatable, WorldRenderable, GameKeyListener, Mous
 		InputListener.getInstance().registerKeyListener(this);
 		InputListener.getInstance().registerClickListenerToWorld(this);
 		playerUI = new PlayerUI(this);
-		Updater.register(this);
+		Updater.getInstance().register(this);
 		GameGraphics.registerWorldObj(this, 3);
 		character = GameGraphics.getTextureManager().getTexture("Player");
 	
@@ -135,22 +135,16 @@ public class Player implements Updatable, WorldRenderable, GameKeyListener, Mous
 		if (!(selectedHotbarSlot.getItem() instanceof PlaceableItem)) return;
 		Tile tile = TileProvider.pixel_AccessTile(InputListener.getInstance().getMouseX(), InputListener.getInstance().getMouseY());
 		if (tile == null || !tile.isEmpty()) return;
-		BufferedImage texture = null;
-		
-		switch (buildingTool.getBuildRotation()) {
-		case NORTH:
-			texture = blueprints[0];
-			break;
-		case EAST:
-			texture = blueprints[1];
-			break;
-		case SOUTH:
-			texture = blueprints[2];
-			break;
-		case WEST:
-			texture = blueprints[3];
-			break;
-		}
+		BufferedImage texture = switch (buildingTool.getBuildRotation()) {
+		case NORTH ->
+			blueprints[0];
+		case EAST ->
+			blueprints[1];
+		case SOUTH ->
+			blueprints[2];
+		case WEST ->
+			blueprints[3];
+		};
 		
 		if (texture == null) return;
 		g.drawImage(texture, (int) (tile.pixelX), (int) (tile.pixelY), graphics);
@@ -177,9 +171,9 @@ public class Player implements Updatable, WorldRenderable, GameKeyListener, Mous
 		tiles[8] = getTile(-100,100);
 		Map<ItemID, Integer> tempInventory = new HashMap<>();
 		for (Tile tile : tiles) {
-			if ( !(tile.getTileObject() instanceof IContainsConveyor) ) continue;
+			if ( !(tile.getTileObject() instanceof IContainsConveyor containsConveyor) ) continue;
 			
-			Conveyor conv = ((IContainsConveyor) tile.getTileObject()).getConveyor();
+			Conveyor conv = containsConveyor.getConveyor();
 			if (!conv.isEmpty()) {
 				WorldItem worldItem = conv.collectItem();
 				tempInventory.merge(worldItem.getItem().getItemID(), 1, Integer::sum); 

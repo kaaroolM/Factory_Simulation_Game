@@ -9,7 +9,7 @@ import graphics.UIClickable;
 import survivalGame.ItemManagement.ItemStack;
 import survivalGame.inputs.InputListener;
 
-public class InventorySlot implements UIClickable{
+public final class InventorySlot implements UIClickable{
 	
 	private BufferedImage UI;
 	private BufferedImage selectedUI;

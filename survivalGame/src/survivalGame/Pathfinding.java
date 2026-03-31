@@ -12,7 +12,7 @@ import java.util.Set;
 import survivalGame.TileManagement.Tile;
 import survivalGame.TileManagement.TileProvider;
 
-public class Pathfinding {
+public final class Pathfinding {
 
 	private final Tile originTile;
 	private final Tile destinationTile;

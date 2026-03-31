@@ -15,7 +15,7 @@ import graphics.TextureManager;
 import graphics.ImageManipulation.ImageFlipper;
 import survivalGame.inputs.InputListener;
 
-public class InitialiseGame {
+public final class InitialiseGame {
 	
 	
 	static TextureManager textureManager = new TextureManager();
@@ -34,7 +34,7 @@ public class InitialiseGame {
 		gameGraphics.addOnTextureManager(textureManager);
 		gameGraphics.addMouseMotionListener(InputListener.getInstance());
 		
-		Updater.register(gameGraphics);
+		Updater.getInstance().register(gameGraphics);
 		gameGraphics.initialiseMenu(textureManager);
 
 		new MainScreen(gameGraphics);

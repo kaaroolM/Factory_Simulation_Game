@@ -18,7 +18,7 @@ import survivalGame.tileObjects.TileObject;
 import survivalGame.tileObjects.FactoryComponents.Conveyor;
 import survivalGame.tileObjects.FactoryComponents.FactoryComponent;
 
-public class BuildingController implements GameKeyListener, MouseClickListener, GameMouseReleaseListener  {
+public final class BuildingController implements GameKeyListener, MouseClickListener, GameMouseReleaseListener  {
 	private BuildMode buildMode = BuildMode.BUILD;
 	
 	private Direction buildRotation = Direction.NORTH;
@@ -42,16 +42,14 @@ public class BuildingController implements GameKeyListener, MouseClickListener, 
 		}
 		//If player hasn't selected a hotbarSlot, return.
 		if (player.getSelectedHotbarSlot() == null) return;
-		if (!(player.getSelectedHotbarSlot().getItem() instanceof PlaceableItem)) return;
+		if (!(player.getSelectedHotbarSlot().getItem() instanceof PlaceableItem toPlace)) return;
 		
  		//place the item if it is placeable.
-		PlaceableItem toPlace = (PlaceableItem)player.getSelectedHotbarSlot().getItem();
 		if (toPlace == null) return;
 		TileObject placedObject = toPlace.place(tile, buildRotation);
 	
 		//If it is a conveyor register it to conveyor manager.
-		if (placedObject instanceof Conveyor) {
-			Conveyor conv = ((Conveyor) placedObject);
+		if (placedObject instanceof Conveyor conv) {
 			ConveyorManager.getInstance().registerConveyor(conv);
 			
 		}

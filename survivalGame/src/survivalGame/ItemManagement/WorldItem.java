@@ -8,7 +8,7 @@ import survivalGame.Updatable;
 import survivalGame.Updater;
 import survivalGame.TileManagement.Tile;
 
-public class WorldItem implements WorldRenderable, Updatable {
+public final class WorldItem implements WorldRenderable, Updatable {
 
 	private int pixelX;
 	private int pixelY;
@@ -30,7 +30,7 @@ public class WorldItem implements WorldRenderable, Updatable {
 		
 		GameGraphics.registerWorldObj(this, 4);
 		
-		Updater.register(this);
+		Updater.getInstance().register(this);
 	}
 	
 	@Override
@@ -76,7 +76,7 @@ public class WorldItem implements WorldRenderable, Updatable {
 	}
 	
 	public void deleteItem() {
-		Updater.remove(this);
+		Updater.getInstance().remove(this);
 		GameGraphics.removeWorldObj(this, 4);
 	}
 	@Override

@@ -5,7 +5,8 @@ import survivalGame.TileManagement.TileProvider;
 import survivalGame.tileObjects.Direction;
 import survivalGame.tileObjects.TileObject;
 
-public abstract class FactoryComponent extends TileObject  {
+public sealed abstract class FactoryComponent extends TileObject
+		permits Conveyor, RockDriller, TreeHarvester {
 	
 	private Direction rotation;
 	
@@ -31,22 +32,16 @@ public abstract class FactoryComponent extends TileObject  {
 	 * @return the {@link Tile} that rotation is pointing towards.
 	 */
 	public Tile getTargetTile(Direction rotation) {
-		Tile targetTile = null;
-		switch (rotation){
-		case NORTH:
-			targetTile = TileProvider.world_AccessTile(getParentTile().x,getParentTile().y - 1);
-			break;
-		case EAST:
-			targetTile = TileProvider.world_AccessTile(getParentTile().x + 1, getParentTile().y);
-			break;
-		case SOUTH:
-			targetTile = TileProvider.world_AccessTile(getParentTile().x, getParentTile().y + 1);
-			break;
-		case WEST:
-			targetTile = TileProvider.world_AccessTile(getParentTile().x - 1, getParentTile().y);
-			break;
-		}
-		return targetTile;
+		return switch (rotation){
+		case NORTH ->
+			TileProvider.world_AccessTile(getParentTile().x,getParentTile().y - 1);
+		case EAST ->
+			TileProvider.world_AccessTile(getParentTile().x + 1, getParentTile().y);
+		case SOUTH ->
+			TileProvider.world_AccessTile(getParentTile().x, getParentTile().y + 1);
+		case WEST ->
+			TileProvider.world_AccessTile(getParentTile().x - 1, getParentTile().y);
+		};
 	}
 	
 	public Direction getRotation() {
